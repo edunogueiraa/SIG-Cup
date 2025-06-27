@@ -98,11 +98,7 @@ while opcao != '0':
 
                 case '0':
                     print("Saindo do Módulo Cliente")
-
-                case _: #else
-                    print("Opção inválida!\n")
-                    input("Tecle <ENTER> para continuar...") 
-                    
+             
         case '2':
             os.system('clear')
             print("____________________________________________")
@@ -181,11 +177,7 @@ while opcao != '0':
 
                 case '0':
                     print("Saindo do módulo canecas")
-
-                case _: #else
-                    print("Opção inválida!\n")
-                    input("Tecle <ENTER> para continuar...")   
-
+ 
         case '3':
             os.system('clear')
             print("____________________________________________")
@@ -247,10 +239,6 @@ while opcao != '0':
                 case '0':
                     print("Saindo do módulo pedidos")
 
-                case _: #else
-                    print("Opção inválida!\n")
-                    input("Tecle <ENTER> para continuar...") 
-
         case '4':
             os.system('clear')
             print("____________________________________________")
@@ -304,10 +292,6 @@ while opcao != '0':
 
                 case '0':
                     print("Saindo do Módulo Relatórios")
-
-                case _: #else
-                    print("Opção inválida!\n")
-                    input("Tecle <ENTER> para continuar...") 
 
         case '0':
             print("Encerrando o programa")
