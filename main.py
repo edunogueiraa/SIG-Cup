@@ -13,6 +13,7 @@ while opcao != '0':
     print("|           2 Canecas                             |")
     print("|           3 Pedidos                             |")
     print("|           4 Informações                         |")
+    print("|           5 Relatórios                          |")
     print("|           0 Sair                                |")
     print("|_________________________________________________|")
     print("\n")
@@ -46,7 +47,7 @@ while opcao != '0':
                     print("|__________________________________________|\n")
                     
                     cpf = str(input("CPF:"))
-                    nome = str(input("Nome: "))
+                    nome = str(input("\nNome: "))
                     endereco = str(input("\nEndereço: "))
                     telefone = str(input("\nTelefone: "))
 
@@ -62,7 +63,7 @@ while opcao != '0':
                     print("|__________________________________________|\n")
 
                     print("CPF: ")
-                    print("\nNome: \n")
+                    print("\nNome: ")
                     print("\nEndereço: ")
                     print("\nTelefone: \n")
 
@@ -76,7 +77,7 @@ while opcao != '0':
                     print("|__________________________________________|\n")
                     
                     cpf = str(input("CPF: "))
-                    nome = str(input("\nNome: \n"))
+                    nome = str(input("\nNome: "))
                     endereco = str(input("\nEndereço: "))
                     telefone = str(input("\nTelefone: "))
 
@@ -90,13 +91,17 @@ while opcao != '0':
                     print("|           Excluir Dados dos Clientes     |")
                     print("|__________________________________________|\n")
 
-                    valor_cpf = input("Digite o cpf do cliente para excluir: \n")
+                    valor_cpf = input("Digite o cpf do cliente para excluir: ")
 
                     print("Cliente excluido com sucesso!")
                     input("Tecle <ENTER> para continuar...")
 
                 case '0':
                     print("Saindo do Módulo Cliente")
+
+                case _: #else
+                    print("Opção inválida!\n")
+                    input("Tecle <ENTER> para continuar...") 
                     
         case '2':
             os.system('clear')
@@ -121,25 +126,65 @@ while opcao != '0':
                     print("|                                          |")
                     print("|           Cadastro de Canecas            |")
                     print("|__________________________________________|\n")
-
+                    
                     cor  = str(input("Cor: "))
                     valor = float(input("\nvalor: "))
-                    id = id + 1 #Ideia de uma fila de IDs
+                    modelo = str(input("\nModelo:"))
+                    quantidade = int(input("\nQuantidade: "))
+                    #id = len(dicionário) + 1
 
                     print("\n\nCaneca cadastrada com sucesso!\n")
                     input("Tecle <ENTER> para continuar...")
 
                 case '2':
-                    print("Listar")
-                
+                    os.system('clear')
+                    print("____________________________________________")
+                    print("|                                          |")
+                    print("|             Listar Canecas               |")
+                    print("|__________________________________________|\n")
+
+                    print("Modelos: ", modelos)
+                    print("Cores: ", cores)
+                    print("Valores: ",valores)
+                    print("Quantidade em Estoque: ", quantidade_estoque)
+
+                    input("Tecle <ENTER> para continuar...")
+
                 case '3':
-                    print("Atualizar")
-                
+                    os.system('clear')
+                    print("____________________________________________")
+                    print("|                                          |")
+                    print("|             Atualizar Caneca             |")
+                    print("|__________________________________________|\n")
+
+                    id_atualizar_caneca = int(input("Digite o ID da caneca: "))
+                    cor  = str(input("\n\nCor: "))
+                    valor = float(input("\nvalor: "))
+                    modelo = str(input("\nModelo:"))
+                    quantidade = int(input("\nQuantidade: "))
+                    id = id_atualizar_caneca
+
+                    print("\n\nCaneca atualizada com sucesso!\n")
+                    input("Tecle <ENTER> para continuar...")
+
                 case '4':
-                    print("Deletar")
-                
+                    os.system('clear')
+                    print("____________________________________________")
+                    print("|                                          |")
+                    print("|             Deletar Caneca               |")
+                    print("|__________________________________________|\n")
+
+                    id_deletar_caneca = int(input("Digite o ID da caneca: "))
+
+                    print("\n\nCaneca atualizada com sucesso!\n")
+                    input("Tecle <ENTER> para continuar...")
+
                 case '0':
                     print("Saindo do módulo canecas")
+
+                case _: #else
+                    print("Opção inválida!\n")
+                    input("Tecle <ENTER> para continuar...")   
 
         case '3':
             os.system('clear')
@@ -173,6 +218,10 @@ while opcao != '0':
                 case '0':
                     print("Saindo do módulo pedidos")
 
+                case _: #else
+                    print("Opção inválida!\n")
+                    input("Tecle <ENTER> para continuar...") 
+
         case '4':
             os.system('clear')
             print("____________________________________________")
@@ -203,6 +252,42 @@ while opcao != '0':
                 
                 case '0':
                     print("Saindo do módulo informações")
+
+                case _: #else
+                    print("Opção inválida!\n")
+                    input("Tecle <ENTER> para continuar...") 
+
+        case '5':
+            os.system('clear')
+            print("____________________________________________")
+            print("|                                          |")
+            print("|                Relatórios                |")
+            print("|__________________________________________|")
+            print("|                                          |")
+            print("|           1 Pedidos por Periodo          |")
+            print("|           2 Pedidos por Cliente          |")
+            print("|           3 Pedidos por Produto          |")
+            print("|           0 Sair                         |")
+            print("|__________________________________________|")
+            op_relatorios = str(input("Escolha sua opção: "))
+
+            match op_relatorios != '0':
+
+                case '1':
+                    print("1")
+                    
+                case '2':
+                    print("2")
+
+                case '3':
+                    print("3")
+
+                case '0':
+                    print("Saindo do Módulo Relatórios")
+
+                case _: #else
+                    print("Opção inválida!\n")
+                    input("Tecle <ENTER> para continuar...") 
 
         case '0':
             print("Encerrando o programa")
