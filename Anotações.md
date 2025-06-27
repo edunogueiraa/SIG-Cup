@@ -10,6 +10,6 @@
 
 ## Criar modulo relatórios
 
-    Pedidos por periodo
+    Pedidos por periodo (Data até outra data)
     Pedidos por cliente
     Pedidos por produto    
