@@ -124,7 +124,7 @@ while opcao != '0':
                     os.system('clear')
                     print("____________________________________________")
                     print("|                                          |")
-                    print("|           Cadastro de Canecas            |")
+                    print("|           Cadastro de Caneca             |")
                     print("|__________________________________________|\n")
                     
                     cor  = str(input("Cor: "))
@@ -204,16 +204,45 @@ while opcao != '0':
             match op_pedidos != 0:
 
                 case '1':
-                    print("Cadastrar")
+                    os.system('clear')
+                    print("____________________________________________")
+                    print("|                                          |")
+                    print("|             Cadastrar Pedido             |")
+                    print("|__________________________________________|\n")
+
+                    cliente_pedido = str(input("Informe o CPF do cliente: "))
+                    while pedidos != 'n':
+                        caneca_pedido = int(input("\nDigite o ID do modelo de caneca desejada: "))
+                        quantidade_pedido = int(input("\nDigite a quantidade de canecas desse modelo: \n"))
+                        
+                        valor_total = quantidade_pedido * valor_caneca
+
+                        pedidos = str(input("Deseja comprar outro modelo de caneca? (s/n)"))
 
                 case '2':
-                    print("Listar")
+                    os.system('clear')
+                    print("____________________________________________")
+                    print("|                                          |")
+                    print("|             Listar Pedidos               |")
+                    print("|__________________________________________|\n")
                 
                 case '3':
-                    print("Atualizar")
+                    os.system('clear')
+                    print("____________________________________________")
+                    print("|                                          |")
+                    print("|             Atualizar Pedido             |")
+                    print("|__________________________________________|\n")
+
+                    id_pedido = int(input("Digite o ID do pedido: "))
                 
                 case '4':
-                    print("Deletar")
+                    os.system('clear')
+                    print("____________________________________________")
+                    print("|                                          |")
+                    print("|             Deletar Pedido               |")
+                    print("|__________________________________________|\n")
+
+                    id_pedido = int(input("Digite o ID do pedido: "))
                 
                 case '0':
                     print("Saindo do módulo pedidos")
@@ -232,30 +261,9 @@ while opcao != '0':
             print("|    Nome: Eduardo Nogueira                |")
             print("|    GitHub: @edunogueiraa                 |")
             print("|    Email: eduardonogueira105@gmail.com   |")
-            print("|__________________________________________|")
-            op_informacoes = str(input("Escolha sua opção: "))
+            print("|__________________________________________|\n")
 
-
-            match op_informacoes != 0:
-
-                case '1':
-                    print("Cadastrar")
-                    
-                case '2':
-                    print("Listar")
-                
-                case '3':
-                    print("Atualizar")
-                
-                case '4':
-                    print("Deletar")
-                
-                case '0':
-                    print("Saindo do módulo informações")
-
-                case _: #else
-                    print("Opção inválida!\n")
-                    input("Tecle <ENTER> para continuar...") 
+            input("Tecle <ENTER> para continuar...") 
 
         case '5':
             os.system('clear')
@@ -274,13 +282,25 @@ while opcao != '0':
             match op_relatorios != '0':
 
                 case '1':
-                    print("1")
-                    
+                    os.system('clear')
+                    print("____________________________________________")
+                    print("|                                          |")
+                    print("|             Pedidos por Periodo          |")
+                    print("|__________________________________________|\n")
+
                 case '2':
-                    print("2")
+                    os.system('clear')
+                    print("____________________________________________")
+                    print("|                                          |")
+                    print("|             Pedidos por Cliente          |")
+                    print("|__________________________________________|\n")
 
                 case '3':
-                    print("3")
+                    os.system('clear')
+                    print("____________________________________________")
+                    print("|                                          |")
+                    print("|             Pedidos por Produto          |")
+                    print("|__________________________________________|\n")
 
                 case '0':
                     print("Saindo do Módulo Relatórios")
