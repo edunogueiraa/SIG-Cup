@@ -44,7 +44,8 @@ while opcao != '0':
                     print("|                                          |")
                     print("|           Cadastro de Clientes           |")
                     print("|__________________________________________|\n")
-
+                    
+                    #cpf
                     nome = str(input("Nome: "))
                     endereco = str(input("\nEndereço: "))
                     telefone = str(input("\nTelefone: "))
@@ -170,7 +171,6 @@ while opcao != '0':
                 case '0':
                     print("Saindo do módulo pedidos")
 
-
         case '4':
             os.system('clear')
             print("____________________________________________")
@@ -201,7 +201,6 @@ while opcao != '0':
                 
                 case '0':
                     print("Saindo do módulo informações")
-
 
         case '0':
             print("Encerrando o programa")
