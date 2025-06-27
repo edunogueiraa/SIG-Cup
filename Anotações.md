@@ -12,4 +12,7 @@
 
     Pedidos por periodo (Data até outra data)
     Pedidos por cliente
-    Pedidos por produto    
+    Pedidos por produto
+
+
+    Trabalhar com dicionários    
