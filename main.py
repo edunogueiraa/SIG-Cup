@@ -45,7 +45,7 @@ while opcao != '0':
                     print("|           Cadastro de Clientes           |")
                     print("|__________________________________________|\n")
                     
-                    #cpf
+                    cpf = str(input("CPF:"))
                     nome = str(input("Nome: "))
                     endereco = str(input("\nEndereço: "))
                     telefone = str(input("\nTelefone: "))
@@ -61,7 +61,8 @@ while opcao != '0':
                     print("|          Exibir Dados dos Clientes       |")
                     print("|__________________________________________|\n")
 
-                    print("Nome: ")
+                    print("CPF: ")
+                    print("\nNome: \n")
                     print("\nEndereço: ")
                     print("\nTelefone: \n")
 
@@ -74,7 +75,8 @@ while opcao != '0':
                     print("|         Atualizar Dados dos Clientes     |")
                     print("|__________________________________________|\n")
                     
-                    nome = str(input("Nome: "))
+                    cpf = str(input("CPF: "))
+                    nome = str(input("\nNome: \n"))
                     endereco = str(input("\nEndereço: "))
                     telefone = str(input("\nTelefone: "))
 
@@ -88,7 +90,7 @@ while opcao != '0':
                     print("|           Excluir Dados dos Clientes     |")
                     print("|__________________________________________|\n")
 
-                    valor_id = input("Digite o id do cliente para excluir: \n")
+                    valor_cpf = input("Digite o cpf do cliente para excluir: \n")
 
                     print("Cliente excluido com sucesso!")
                     input("Tecle <ENTER> para continuar...")

@@ -3,6 +3,13 @@
 ## Clientes
     Nome, endereço, fone e cpf
 ## Canecas 
-    Valor ,cor e ID 
+    Valor ,modelo ,cor, quantidadeEstoque e ID 
 ## Pedidos
-    ID, quantidade, cliente, caneca e valor total
+    ID, quantidade, IDcliente, IDcaneca e valor total
+
+
+## Criar modulo relatórios
+
+    Pedidos por periodo
+    Pedidos por cliente
+    Pedidos por produto    
