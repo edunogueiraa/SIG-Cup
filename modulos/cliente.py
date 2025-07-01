@@ -77,3 +77,4 @@ def cliente():
 
         case '0':
             print("Saindo do Módulo Cliente")
+

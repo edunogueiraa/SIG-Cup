@@ -2,25 +2,47 @@ import os
 import modulos.caneca
 import modulos.cliente
 import modulos.pedido
+import modulos.relatorio
+import modulos.informes
+import modulos.painel
+import modulos.valida
 
+# CPFcliente -> nome, rua, telefone
+clientes = {
+    '000.000.000-00': ["Maggie Simpson", "Rua maria das dores", "55555-5555"],
+    '111.111.111-11': ["Bart Simpson", "Rua do travesseiro", "55555-5556"],
+    '222.222.222-22': ["Lisa Simpson", "Avenida das árvores", "55555-5557"],
+    '333.333.333-33': ["Homer Simpson", "Rua da felicidade", "55555-5558"],
+    '444.444.444-44': ["Marge Simpson", "Rua do amor", "55555-5559"],
+    '555.555.555-55': ["Ned Flanders", "Rua da paz", "55555-5560"]
+}
+
+# IDcaneca -> modelo, cor, quantidadeEstoque, valor
+canecas = {
+    '0': ["Caneca do batman", "preta", 10, 50.00],
+    '1': ["Caneca do superman", "azul", 20, 45.00],
+    '2': ["Caneca do flash", "vermelha", 15, 40.00],
+    '3': ["Caneca do lanterna verde", "verde", 25, 55.00],
+    '4': ["Caneca do homem de ferro", "dourada", 30, 60.00],
+    '5': ["Caneca da Mulher Maravilha", "roxa", 12, 48.00]
+}
+
+# IDpedido -> CPFcliente, IDcaneca, quantidade, valorTotal
+pedidos = {
+    '0': ["000.000.000-00", 0, 2, 100.00],
+    '1': ["111.111.111-11", 1, 1, 45.00],
+    '2': ["222.222.222-22", 2, 3, 120.00],
+    '3': ["333.333.333-33", 3, 1, 55.00],
+    '4': ["444.444.444-44", 4, 4, 240.00],
+    '5': ["555.555.555-55", 5, 2, 96.00]
+}
 
 opcao = ''
 while opcao != '0':
     os.system('clear')
 
-    print("___________________________________________________")
-    print("|                                                 |")
-    print("|                Sistema SIG-Cup                  |")
-    print("|_________________________________________________|")
-    print("|                                                 |")
-    print("|           1 Clientes                            |")
-    print("|           2 Canecas                             |")
-    print("|           3 Pedidos                             |")
-    print("|           4 Informações                         |")
-    print("|           5 Relatórios                          |")
-    print("|           0 Sair                                |")
-    print("|_________________________________________________|")
-    print("\n")
+    modulos.painel.painel()
+
     opcao = str(input("Digite a opção desejada: "))
 
     match opcao:
@@ -38,58 +60,12 @@ while opcao != '0':
             modulos.pedido.pedido()
 
         case '4':
-            os.system('clear')
-            print("____________________________________________")
-            print("|                                          |")
-            print("|                Informações               |")
-            print("|__________________________________________|")
-            print("|                                          |")
-            print("|    Nome: Eduardo Nogueira                |")
-            print("|    GitHub: @edunogueiraa                 |")
-            print("|    Email: eduardonogueira105@gmail.com   |")
-            print("|__________________________________________|\n")
 
-            input("Tecle <ENTER> para continuar...") 
+            modulos.informes.informes()
 
         case '5':
-            os.system('clear')
-            print("____________________________________________")
-            print("|                                          |")
-            print("|                Relatórios                |")
-            print("|__________________________________________|")
-            print("|                                          |")
-            print("|           1 Pedidos por Periodo          |")
-            print("|           2 Pedidos por Cliente          |")
-            print("|           3 Pedidos por Produto          |")
-            print("|           0 Sair                         |")
-            print("|__________________________________________|")
-            op_relatorios = str(input("Escolha sua opção: "))
 
-            match op_relatorios != '0':
-
-                case '1':
-                    os.system('clear')
-                    print("____________________________________________")
-                    print("|                                          |")
-                    print("|             Pedidos por Periodo          |")
-                    print("|__________________________________________|\n")
-
-                case '2':
-                    os.system('clear')
-                    print("____________________________________________")
-                    print("|                                          |")
-                    print("|             Pedidos por Cliente          |")
-                    print("|__________________________________________|\n")
-
-                case '3':
-                    os.system('clear')
-                    print("____________________________________________")
-                    print("|                                          |")
-                    print("|             Pedidos por Produto          |")
-                    print("|__________________________________________|\n")
-
-                case '0':
-                    print("Saindo do Módulo Relatórios")
+            modulos.relatorio.relatorio()
 
         case '0':
             print("Encerrando o programa")
