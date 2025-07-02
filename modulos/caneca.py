@@ -24,6 +24,7 @@ def menu_caneca():
     print("|           0 Sair                         |")
     print("|__________________________________________|\n")
     opcao_caneca = str(input("Escolha sua opção: "))
+    
     return opcao_caneca
 
 def cadastro_caneca():
