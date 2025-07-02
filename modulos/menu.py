@@ -1,4 +1,7 @@
-def painel():
+import os
+
+def menu_principal():
+    os.system('clear')
     print("___________________________________________________")
     print("|                                                 |")
     print("|                Sistema SIG-Cup                  |")
@@ -12,3 +15,6 @@ def painel():
     print("|           0 Sair                                |")
     print("|_________________________________________________|")
     print("\n")
+        
+    opcao_principal = str(input("Digite a opção desejada: "))
+    return opcao_principal

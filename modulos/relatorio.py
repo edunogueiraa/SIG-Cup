@@ -9,7 +9,7 @@ def relatorio():
     print("|                                          |")
     print("|           1 Pedidos por Periodo          |")
     print("|           2 Pedidos por Cliente          |")
-    print("|           3 Pedidos por Produto          |")
+    print("|           3 Pedidos por Caneca           |")
     print("|           0 Sair                         |")
     print("|__________________________________________|")
     op_relatorios = str(input("Escolha sua opção: "))

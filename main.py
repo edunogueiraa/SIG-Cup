@@ -4,18 +4,9 @@ import modulos.cliente
 import modulos.pedido
 import modulos.relatorio
 import modulos.informes
-import modulos.painel
+import modulos.menu
 import modulos.valida
 
-# CPFcliente -> nome, rua, telefone
-clientes = {
-    '000.000.000-00': ["Maggie Simpson", "Rua maria das dores", "55555-5555"],
-    '111.111.111-11': ["Bart Simpson", "Rua do travesseiro", "55555-5556"],
-    '222.222.222-22': ["Lisa Simpson", "Avenida das árvores", "55555-5557"],
-    '333.333.333-33': ["Homer Simpson", "Rua da felicidade", "55555-5558"],
-    '444.444.444-44': ["Marge Simpson", "Rua do amor", "55555-5559"],
-    '555.555.555-55': ["Ned Flanders", "Rua da paz", "55555-5560"]
-}
 
 # IDcaneca -> modelo, cor, quantidadeEstoque, valor
 canecas = {
@@ -37,19 +28,28 @@ pedidos = {
     '5': ["555.555.555-55", 5, 2, 96.00]
 }
 
-opcao = ''
-while opcao != '0':
-    os.system('clear')
+opcao_principal = ''
+while opcao_principal != '0':
 
-    modulos.painel.painel()
+    opcao_principal = modulos.menu.menu_principal()
 
-    opcao = str(input("Digite a opção desejada: "))
-
-    match opcao:
+    match opcao_principal:
 
         case '1':
+            opcao_cliente = ''
+            while opcao_cliente != '0':
+                opcao_cliente = modulos.cliente.menu_cliente()
 
-            modulos.cliente.cliente()
+                match opcao_cliente:
+
+                    case '1':
+                        modulos.cliente.cadastro_cliente()
+                    case '2':
+                        modulos.cliente.listar_cliente()
+                    case '3':
+                        modulos.cliente.atualizar_cliente()
+                    case '4':
+                        modulos.cliente.excluir_cliente()
              
         case '2':
 
