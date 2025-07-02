@@ -37,9 +37,9 @@ def cadastro_cliente():
     print("|__________________________________________|\n")
     
     nome = str(input("Nome: "))
-    cpf = str(input("\nCPF: "))
-    endereco = str(input("\nEndereço: "))
-    telefone = str(input("\nTelefone: "))
+    cpf = str(input("CPF: "))
+    endereco = str(input("Endereço: "))
+    telefone = str(input("Telefone: "))
     print()
     clientes[cpf] = [nome,endereco,telefone]
 
@@ -56,9 +56,9 @@ def listar_cliente():
 
     cpf = str(input("Qual o CPF do cliente? : "))
     print("\nNome: ",clientes[cpf][0])
-    print("\nCPF: ",cpf)
-    print("\nEndereço: ",clientes[cpf][1])
-    print("\nTelefone: ",clientes[cpf][2])
+    print("CPF: ",cpf)
+    print("Endereço: ",clientes[cpf][1])
+    print("Telefone: ",clientes[cpf][2])
     print()
 
     input("Tecle <ENTER> para continuar...")
@@ -74,8 +74,8 @@ def atualizar_cliente():
 
     if cpf in clientes: 
         nome = str(input("\nNome: "))
-        endereco = str(input("\nEndereço: "))
-        telefone = str(input("\nTelefone: "))
+        endereco = str(input("Endereço: "))
+        telefone = str(input("Telefone: "))
 
     clientes[cpf] = [nome,endereco,telefone]
 
@@ -93,8 +93,8 @@ def excluir_cliente():
     
     if cpf in clientes:
         print("\nNome: ",clientes[cpf][0])
-        print("\nEndereço: ",clientes[cpf][1])
-        print("\nTelefone: ",clientes[cpf][2])
+        print("Endereço: ",clientes[cpf][1])
+        print("Telefone: ",clientes[cpf][2])
         print()
 
         resposta = input("Deseja exluir o cliente? (S/N)")

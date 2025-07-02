@@ -14,28 +14,23 @@ def relatorio():
     print("|__________________________________________|")
     op_relatorios = str(input("Escolha sua opção: "))
 
-    match op_relatorios != '0':
+def pedidos_periodo():
+    os.system('clear')
+    print("____________________________________________")
+    print("|                                          |")
+    print("|             Pedidos por Periodo          |")
+    print("|__________________________________________|\n")
 
-        case '1':
-            os.system('clear')
-            print("____________________________________________")
-            print("|                                          |")
-            print("|             Pedidos por Periodo          |")
-            print("|__________________________________________|\n")
+def pedidos_cliente():
+    os.system('clear')
+    print("____________________________________________")
+    print("|                                          |")
+    print("|             Pedidos por Cliente          |")
+    print("|__________________________________________|\n")
 
-        case '2':
-            os.system('clear')
-            print("____________________________________________")
-            print("|                                          |")
-            print("|             Pedidos por Cliente          |")
-            print("|__________________________________________|\n")
-
-        case '3':
-            os.system('clear')
-            print("____________________________________________")
-            print("|                                          |")
-            print("|             Pedidos por Produto          |")
-            print("|__________________________________________|\n")
-
-        case '0':
-            print("Saindo do Módulo Relatórios")
+def pedidos_produto():
+    os.system('clear')
+    print("____________________________________________")
+    print("|                                          |")
+    print("|             Pedidos por Produto          |")
+    print("|__________________________________________|\n")
