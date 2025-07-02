@@ -1,6 +1,6 @@
 import os
 
-def relatorio():
+def menu_relatorio():
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -11,8 +11,9 @@ def relatorio():
     print("|           2 Pedidos por Cliente          |")
     print("|           3 Pedidos por Caneca           |")
     print("|           0 Sair                         |")
-    print("|__________________________________________|")
-    op_relatorios = str(input("Escolha sua opção: "))
+    print("|__________________________________________|\n")
+    opcao_relatorios = str(input("Escolha sua opção: "))
+    return opcao_relatorios
 
 def pedidos_periodo():
     os.system('clear')
@@ -28,9 +29,9 @@ def pedidos_cliente():
     print("|             Pedidos por Cliente          |")
     print("|__________________________________________|\n")
 
-def pedidos_produto():
+def pedidos_caneca():
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
-    print("|             Pedidos por Produto          |")
+    print("|             Pedidos por Caneca           |")
     print("|__________________________________________|\n")

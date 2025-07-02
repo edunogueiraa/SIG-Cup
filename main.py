@@ -32,8 +32,6 @@ while opcao_principal != '0':
              
         case '2':
 
-            modulos.caneca.menu_caneca()
-
             opcao_caneca = ''
             while opcao_caneca != '0':
                 opcao_caneca = modulos.caneca.menu_caneca()
@@ -50,8 +48,21 @@ while opcao_principal != '0':
                         modulos.caneca.excluir_caneca()
 
         case '3':
-            
-            modulos.pedido.pedido()
+
+            opcao_pedido = ''
+            while opcao_pedido != '0':
+                opcao_pedido = modulos.pedido.menu_pedido()
+
+                match opcao_pedido:
+
+                    case '1':
+                        modulos.pedido.cadastro_pedido()
+                    case '2':
+                        modulos.pedido.listar_pedido()
+                    case '3':
+                        modulos.pedido.atualizar_pedido()
+                    case '4':
+                        modulos.pedido.excluir_pedido()
 
         case '4':
 
@@ -59,7 +70,18 @@ while opcao_principal != '0':
 
         case '5':
 
-            modulos.relatorio.relatorio()
+            opcao_relatorios = ''
+            while opcao_relatorios != '0':
+                opcao_relatorios = modulos.relatorio.menu_relatorio()
+
+                match opcao_relatorios:
+
+                    case '1':
+                        modulos.relatorio.pedidos_periodo()
+                    case '2':
+                        modulos.relatorio.pedidos_cliente()
+                    case '3':
+                        modulos.relatorio.pedidos_caneca()
 
         case '0':
             print("Encerrando o programa")

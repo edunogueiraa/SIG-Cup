@@ -10,7 +10,7 @@ pedidos = {
     '5': ["555.555.555-55", 5, 2, 96.00]
 }
 
-def pedido():
+def menu_pedido():
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -23,7 +23,8 @@ def pedido():
     print("|           4 Deletar                      |")
     print("|           0 Sair                         |")
     print("|__________________________________________|")
-    op_pedidos = str(input("Escolha sua opção: "))
+    opcao_pedido = str(input("Escolha sua opção: "))
+    return opcao_pedido
 
 def cadastro_pedido():
     os.system('clear')
@@ -31,7 +32,7 @@ def cadastro_pedido():
     print("|                                          |")
     print("|             Cadastrar Pedido             |")
     print("|__________________________________________|\n")
-    
+
     '''
     cliente_pedido = str(input("Informe o CPF do cliente: "))
     while pedidos != 'n':
