@@ -1,15 +1,5 @@
 import os
 
-# IDpedido -> CPFcliente, IDcaneca, quantidade, valorTotal
-pedidos = {
-    '0': ["000.000.000-00", 0, 2, 100.00],
-    '1': ["111.111.111-11", 1, 1, 45.00],
-    '2': ["222.222.222-22", 2, 3, 120.00],
-    '3': ["333.333.333-33", 3, 1, 55.00],
-    '4': ["444.444.444-44", 4, 4, 240.00],
-    '5': ["555.555.555-55", 5, 2, 96.00]
-}
-
 def menu_pedido():
     os.system('clear')
     print("____________________________________________")
@@ -26,7 +16,7 @@ def menu_pedido():
     opcao_pedido = str(input("Escolha sua opção: "))
     return opcao_pedido
 
-def cadastro_pedido():
+def cadastro_pedido(pedidos):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -44,7 +34,7 @@ def cadastro_pedido():
         pedidos = str(input("Deseja comprar outro modelo de caneca? (s/n)"))
         '''
 
-def listar_pedido():
+def listar_pedido(pedidos):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -62,7 +52,7 @@ def listar_pedido():
         print("Pedido não existente!")
     input("Tecle <ENTER> para continuar...")
         
-def atualizar_pedido():
+def atualizar_pedido(pedidos):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -85,7 +75,7 @@ def atualizar_pedido():
         print("Pedido inexistente!")
     input("Tecle <ENTER> para continuar...")
         
-def excluir_pedido():
+def excluir_pedido(pedidos):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")

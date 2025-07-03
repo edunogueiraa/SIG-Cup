@@ -1,15 +1,5 @@
 import os
 
-# CPFcliente -> nome, rua, telefone
-clientes = {
-    '000.000.000-00': ["Maggie Simpson", "Rua maria das dores", "55555-5555"],
-    '111.111.111-11': ["Bart Simpson", "Rua do travesseiro", "55555-5556"],
-    '222.222.222-22': ["Lisa Simpson", "Avenida das árvores", "55555-5557"],
-    '333.333.333-33': ["Homer Simpson", "Rua da felicidade", "55555-5558"],
-    '444.444.444-44': ["Marge Simpson", "Rua do amor", "55555-5559"],
-    '555.555.555-55': ["Ned Flanders", "Rua da paz", "55555-5560"]
-}
-
 def menu_cliente ():
     os.system('clear')
     print("____________________________________________")
@@ -29,7 +19,7 @@ def menu_cliente ():
     return opcao_cliente
                 
 
-def cadastro_cliente():
+def cadastro_cliente(clientes):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -47,7 +37,7 @@ def cadastro_cliente():
     input("Tecle <ENTER> para continuar...")
 
 
-def listar_cliente():
+def listar_cliente(clientes):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -63,7 +53,7 @@ def listar_cliente():
 
     input("Tecle <ENTER> para continuar...")
 
-def atualizar_cliente():
+def atualizar_cliente(clientes):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -82,7 +72,7 @@ def atualizar_cliente():
     print("\nCliente atualizado com sucesso!\n")
     input("Tecle <ENTER> para continuar...")
 
-def excluir_cliente():
+def excluir_cliente(clientes):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")

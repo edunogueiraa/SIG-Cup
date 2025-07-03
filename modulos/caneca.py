@@ -1,15 +1,5 @@
 import os
 
-# IDcaneca -> modelo, cor, quantidadeEstoque, valor
-canecas = {
-    '0': ["Caneca do batman", "preta", 10, 50.00],
-    '1': ["Caneca do superman", "azul", 20, 45.00],
-    '2': ["Caneca do flash", "vermelha", 15, 40.00],
-    '3': ["Caneca do lanterna verde", "verde", 25, 55.00],
-    '4': ["Caneca do homem de ferro", "dourada", 30, 60.00],
-    '5': ["Caneca da Mulher Maravilha", "roxa", 12, 48.00]
-}
-
 def menu_caneca():
     os.system('clear')
     print("____________________________________________")
@@ -27,7 +17,7 @@ def menu_caneca():
     
     return opcao_caneca
 
-def cadastro_caneca():
+def cadastro_caneca(canecas):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -45,7 +35,7 @@ def cadastro_caneca():
     print("\n\nCaneca cadastrada com sucesso!\n")
     input("Tecle <ENTER> para continuar...")
 
-def listar_caneca():
+def listar_caneca(canecas):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -62,7 +52,7 @@ def listar_caneca():
 
     input("Tecle <ENTER> para continuar...")
 
-def atualizar_caneca():
+def atualizar_caneca(canecas):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -83,7 +73,7 @@ def atualizar_caneca():
     print("\n\nCaneca atualizada com sucesso!\n")
     input("Tecle <ENTER> para continuar...")
 
-def excluir_caneca():
+def excluir_caneca(canecas):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
