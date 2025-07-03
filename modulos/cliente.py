@@ -45,11 +45,14 @@ def listar_cliente(clientes):
     print("|__________________________________________|\n")
 
     cpf = str(input("Qual o CPF do cliente? : "))
-    print("\nNome: ",clientes[cpf][0])
-    print("CPF: ",cpf)
-    print("Endereço: ",clientes[cpf][1])
-    print("Telefone: ",clientes[cpf][2])
-    print()
+    if cpf in clientes:
+        print("\nNome: ",clientes[cpf][0])
+        print("CPF: ",cpf)
+        print("Endereço: ",clientes[cpf][1])
+        print("Telefone: ",clientes[cpf][2])
+        print()
+    else: 
+        print("Não existe cliente com esse CPF!")
 
     input("Tecle <ENTER> para continuar...")
 
