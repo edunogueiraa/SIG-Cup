@@ -1,4 +1,3 @@
-import os
 import modulos.caneca
 import modulos.cliente
 import modulos.pedido

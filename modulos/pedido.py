@@ -27,11 +27,11 @@ def cadastro_pedido(pedidos):
     cliente_pedido = str(input("Informe o CPF do cliente: "))
     while pedidos != 'n':
         caneca_pedido = input("\nDigite o ID do modelo de caneca desejada: ")
-        quantidade_pedido = int(input("\nDigite a quantidade de canecas desse modelo: \n"))
+        quantidade_pedido = int(input("Digite a quantidade de canecas desse modelo: "))
         
         valor_total = quantidade_pedido * valor_caneca
 
-        pedidos = str(input("Deseja comprar outro modelo de caneca? (s/n)"))
+        pedidos = str(input("\nDeseja comprar outro modelo de caneca? (s/n)"))
         '''
 
 def listar_pedido(pedidos):
@@ -49,7 +49,7 @@ def listar_pedido(pedidos):
         print("Quantidade de canecas: ", pedidos[id][2])
         print("Valor total: ", pedidos[id][3])
     else:
-        print("Pedido não existente!")
+        print("\n\nPedido não existente!")
     input("Tecle <ENTER> para continuar...")
         
 def atualizar_pedido(pedidos):
@@ -68,11 +68,10 @@ def atualizar_pedido(pedidos):
         id_caneca = input("ID caneca: ")
         quantidade = input("Quantidade: ")
         valor = input("Valor: ")
-        print()
         pedidos[id] = [cpf_cliente, id_caneca, quantidade, valor]
-        print("\nDados alterados com sucesso!")
+        print("\n\nDados alterados com sucesso!")
     else:
-        print("Pedido inexistente!")
+        print("\n\nPedido inexistente!")
     input("Tecle <ENTER> para continuar...")
         
 def excluir_pedido(pedidos):
@@ -92,9 +91,9 @@ def excluir_pedido(pedidos):
         resposta = input("Deseja exluir o pedido? (S/N)")
         if resposta == 'S' or resposta == 's':
             del pedidos[id]
-            print("Pedido excluido com sucesso!")
+            print("\n\nPedido excluido com sucesso!")
         else:
-            print("Exclusão não realizada!")
+            print("\n\nExclusão não realizada!")
     else:
-        print("Pedido inexistente!")
+        print("\n\nPedido inexistente!")
     input("Tecle <ENTER> para continuar...")        

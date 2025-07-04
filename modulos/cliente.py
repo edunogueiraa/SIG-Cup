@@ -8,10 +8,9 @@ def menu_cliente ():
     print("|__________________________________________|")
     print("|                                          |")
     print("|           1 Cadastrar                    |")
-    print("|           2 Exibir Dados                 |")
+    print("|           2 Listar Dados                 |")
     print("|           3 Atualizar                    |")
     print("|           4 Deletar                      |")
-    print("|           5 Listar                       |")
     print("|           0 Sair                         |")
     print("|__________________________________________|\n")
     opcao_cliente = str(input("Escolha sua opção: "))
@@ -34,6 +33,7 @@ def cadastro_cliente(clientes):
     clientes[cpf] = [nome,endereco,telefone]
 
     print("\n\nCliente cadastrado com sucesso!\n")
+
     input("Tecle <ENTER> para continuar...")
 
 
@@ -52,7 +52,7 @@ def listar_cliente(clientes):
         print("Telefone: ",clientes[cpf][2])
         print()
     else: 
-        print("Não existe cliente com esse CPF!")
+        print("\n\nNão existe cliente com esse CPF!")
 
     input("Tecle <ENTER> para continuar...")
 
@@ -70,9 +70,12 @@ def atualizar_cliente(clientes):
         endereco = str(input("Endereço: "))
         telefone = str(input("Telefone: "))
 
-    clientes[cpf] = [nome,endereco,telefone]
+        clientes[cpf] = [nome,endereco,telefone]
 
-    print("\nCliente atualizado com sucesso!\n")
+        print("\n\nCliente atualizado com sucesso!\n")
+    else:
+        print("\n\nNão existe cliente com esse CPF!")
+
     input("Tecle <ENTER> para continuar...")
 
 def excluir_cliente(clientes):
@@ -93,11 +96,11 @@ def excluir_cliente(clientes):
         resposta = input("Deseja exluir o cliente? (S/N)")
         if resposta == 'S' or resposta == 's':
             del clientes[cpf]
-            print("Cliente excluido com sucesso!")
+            print("\n\nCliente excluido com sucesso!")
         else:
-            print("Exclusão não realizada!")
+            print("\n\nExclusão não realizada!")
     else:
-        print("Esse cliente não existe!")
+        print("\n\nNão existe cliente com esse CPF!")
     
     input("Tecle <ENTER> para continuar...")
 

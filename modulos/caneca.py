@@ -43,13 +43,16 @@ def listar_caneca(canecas):
     print("|__________________________________________|\n")
 
     id = input("Qual o ID da caneca? : ")
-    print("\nID: ", id)
-    print("Modelos: ", canecas[id][0])
-    print("Cores: ", canecas[id][1])
-    print("Quantidade em Estoque: ", canecas[id][2])
-    print("Valores: ",canecas[id][3])
-    
 
+    if id in canecas:
+        print("\nID: ", id)
+        print("Modelos: ", canecas[id][0])
+        print("Cores: ", canecas[id][1])
+        print("Quantidade em Estoque: ", canecas[id][2])
+        print("Valores: ",canecas[id][3])
+    else:
+        print("\n\nEssa caneca não existe!")
+    
     input("Tecle <ENTER> para continuar...")
 
 def atualizar_caneca(canecas):
@@ -68,9 +71,12 @@ def atualizar_caneca(canecas):
         quantidade = int(input("Quantidade: "))
         valor = float(input("valor: "))
 
-    canecas[id] = [modelo,cor,quantidade,valor]
+        canecas[id] = [modelo,cor,quantidade,valor]
 
-    print("\n\nCaneca atualizada com sucesso!\n")
+        print("\n\nCaneca atualizada com sucesso!\n")
+    else:
+        print("\n\nEssa caneca não existe!")
+
     input("Tecle <ENTER> para continuar...")
 
 def excluir_caneca(canecas):
@@ -92,10 +98,10 @@ def excluir_caneca(canecas):
         resposta = input("Deseja exluir a caneca do estoque? (S/N)")
         if resposta == 'S' or resposta == 's':
             del canecas[id]
-            print("Exclusão realizada!")
+            print("\n\nExclusão realizada!")
         else:
-            print("Exclusão não realizada!")
+            print("\n\nExclusão não realizada!")
     else:
-        print("Essa caneca não existe!")
+        print("\n\nEssa caneca não existe!")
     
     input("Tecle <ENTER> para continuar...")
