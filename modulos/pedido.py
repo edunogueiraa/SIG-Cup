@@ -28,6 +28,9 @@ def cadastro_pedido(pedidos,canecas):
     pedidos_condicao = ''
     while pedidos_condicao != 'n':
         id_caneca = int(input("\nDigite o ID do modelo de caneca desejada: "))
+
+        #Não deixar ele comprar uma quantidade maior que a existente em estoque
+
         quantidade = int(input("Digite a quantidade de canecas desse modelo: "))
 
         valor_caneca = canecas[id_caneca][3]
