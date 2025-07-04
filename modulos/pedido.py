@@ -16,23 +16,32 @@ def menu_pedido():
     opcao_pedido = str(input("Escolha sua opção: "))
     return opcao_pedido
 
-def cadastro_pedido(pedidos):
+def cadastro_pedido(pedidos,canecas):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
     print("|             Cadastrar Pedido             |")
     print("|__________________________________________|\n")
 
-    '''
-    cliente_pedido = str(input("Informe o CPF do cliente: "))
-    while pedidos != 'n':
-        caneca_pedido = input("\nDigite o ID do modelo de caneca desejada: ")
-        quantidade_pedido = int(input("Digite a quantidade de canecas desse modelo: "))
-        
-        valor_total = quantidade_pedido * valor_caneca
 
-        pedidos = str(input("\nDeseja comprar outro modelo de caneca? (s/n)"))
-        '''
+    cliente_pedido = str(input("Informe o CPF do cliente: "))
+    pedidos_condicao = ''
+    while pedidos_condicao != 'n':
+        id_caneca = int(input("\nDigite o ID do modelo de caneca desejada: "))
+        quantidade = int(input("Digite a quantidade de canecas desse modelo: "))
+
+        valor_caneca = canecas[id_caneca][3]
+        
+        valor_total = quantidade * valor_caneca
+
+        pedidos_condicao = str(input("\nDeseja comprar outro modelo de caneca? (s/n)"))
+        id_pedido = max(pedidos.keys()) + 1
+
+        #Eliminando canecas que foram compradas
+        canecas[id_caneca][2] -= quantidade
+
+        pedidos[id_pedido] = [cliente_pedido, id_caneca, quantidade, valor_total]
+
 
 def listar_pedido(pedidos):
     os.system('clear')
@@ -41,7 +50,7 @@ def listar_pedido(pedidos):
     print("|             Listar Pedido                |")
     print("|__________________________________________|\n")
 
-    id = input("Digite o ID do pedido: ")
+    id = int(input("Digite o ID do pedido: "))
 
     if id in pedidos:
         print("\nCPF Cliente: ", pedidos[id][0])

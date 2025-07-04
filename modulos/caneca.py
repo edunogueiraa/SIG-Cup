@@ -28,7 +28,7 @@ def cadastro_caneca(canecas):
     cor  = str(input("Cor: "))
     quantidade = int(input("Quantidade: "))
     valor = float(input("valor: "))
-    id = len(canecas) + 1
+    id = max(canecas.keys()) + 1
 
     canecas[id] = [modelo,cor,quantidade,valor]
 
@@ -42,16 +42,18 @@ def listar_caneca(canecas):
     print("|             Listar Caneca                |")
     print("|__________________________________________|\n")
 
-    id = input("Qual o ID da caneca? : ")
+    id = int(input("Qual o ID da caneca? : "))
 
-    if id in canecas:
+    if id in canecas.keys():
         print("\nID: ", id)
         print("Modelos: ", canecas[id][0])
         print("Cores: ", canecas[id][1])
         print("Quantidade em Estoque: ", canecas[id][2])
         print("Valores: ",canecas[id][3])
     else:
-        print("\n\nEssa caneca não existe!")
+        print("Caneca não existe! \nVeja outras:")
+        for id, item in canecas.items():
+            print("ID: ",id, item)
     
     input("Tecle <ENTER> para continuar...")
 
@@ -62,7 +64,7 @@ def atualizar_caneca(canecas):
     print("|             Atualizar Caneca             |")
     print("|__________________________________________|\n")
 
-    id = input("Qual o ID da caneca? : ")
+    id = int(input("Qual o ID da caneca? : "))
     
     if id in canecas:
 
@@ -86,7 +88,7 @@ def excluir_caneca(canecas):
     print("|             Deletar Caneca               |")
     print("|__________________________________________|\n")
 
-    id = input("Qual o ID da caneca? : ")
+    id = int(input("Qual o ID da caneca? : "))
 
     if id in canecas:
 

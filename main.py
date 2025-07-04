@@ -14,14 +14,14 @@ clientes = {
 
 # IDcaneca -> modelo, cor, quantidadeEstoque, valor
 canecas = {
-    '0': ["Caneca do batman", "preta", 10, 50.00],
-    '1': ["Caneca do caneta azul", "azul", 20, 45.00]
+    0: ["Caneca do batman", "preta", 10, 50.00],
+    1: ["Caneca do caneta azul", "azul", 20, 45.00]
 }
 
 # IDpedido -> CPFcliente, IDcaneca, quantidade, valorTotal
 pedidos = {
-    '0': ["000.000.000-00", 0, 2, 100.00],
-    '1': ["111.111.111-11", 1, 1, 45.00]
+    0: ["000.000.000-00", 0, 2, 100.00],
+    1: ["111.111.111-11", 1, 1, 45.00]
 }
 
 opcao_principal = ''
@@ -73,7 +73,7 @@ while opcao_principal != '0':
                 match opcao_pedido:
 
                     case '1':
-                        modulos.pedido.cadastro_pedido(pedidos)
+                        modulos.pedido.cadastro_pedido(pedidos,canecas)
                     case '2':
                         modulos.pedido.listar_pedido(pedidos)
                     case '3':
