@@ -4,7 +4,6 @@ import modulos.pedido
 import modulos.relatorio
 import modulos.informes
 import modulos.menu
-import modulos.valida
 
 # CPFcliente -> nome, rua, telefone
 clientes = {

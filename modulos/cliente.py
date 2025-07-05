@@ -26,6 +26,7 @@ def cadastro_cliente(clientes):
     print("|           Cadastro de Cliente            |")
     print("|__________________________________________|\n")
     
+    #Validando e cadastrando
 
     nome = str(input("Nome: "))
     while not(modulos.valida.validar_nome(nome)):
@@ -46,9 +47,9 @@ def cadastro_cliente(clientes):
 
     clientes[cpf] = [nome,endereco,telefone]
 
-    print("\n\nCliente cadastrado com sucesso!\n")
+    print("\n\nCliente cadastrado com sucesso!")
 
-    input("Tecle <ENTER> para continuar...")
+    input("\nTecle <ENTER> para continuar...")
 
 
 def listar_cliente(clientes):
@@ -68,7 +69,7 @@ def listar_cliente(clientes):
     else: 
         print("\n\nNão existe cliente com esse CPF!")
 
-    input("Tecle <ENTER> para continuar...")
+    input("\nTecle <ENTER> para continuar...")
 
 def atualizar_cliente(clientes):
     os.system('clear')
@@ -90,7 +91,7 @@ def atualizar_cliente(clientes):
     else:
         print("\n\nNão existe cliente com esse CPF!")
 
-    input("Tecle <ENTER> para continuar...")
+    input("\nTecle <ENTER> para continuar...")
 
 def excluir_cliente(clientes):
     os.system('clear')
@@ -116,7 +117,7 @@ def excluir_cliente(clientes):
     else:
         print("\n\nNão existe cliente com esse CPF!")
     
-    input("Tecle <ENTER> para continuar...")
+    input("\nTecle <ENTER> para continuar...")
 
 
 

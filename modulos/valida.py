@@ -1,4 +1,6 @@
-def validar_cpf(cpf): #Creditos Flavius
+#Creditos Flavius
+
+def validar_cpf(cpf):
 
     #Deixar só numeros
     cpf = cpf.replace('.', '')
@@ -45,7 +47,6 @@ def validar_cpf(cpf): #Creditos Flavius
     
     return True
 
-
 def validar_nome(nome):
   nome = nome.replace(' ', '')
   return bool(nome.isalpha())
@@ -57,6 +58,7 @@ def validar_telefone(telefone):
   telefone = telefone.replace(')', '')
   telefone = telefone.replace('+', '')
   tam = len(telefone)
+
   if tam < 11:
     return False
   if not(telefone.isdigit()):

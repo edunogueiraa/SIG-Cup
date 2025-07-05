@@ -24,7 +24,7 @@ def cadastro_caneca(canecas):
     print("|           Cadastro de Caneca             |")
     print("|__________________________________________|\n")
     
-    modelo = str(input("Modelo:"))
+    modelo = str(input("Modelo: "))
     cor  = str(input("Cor: "))
     quantidade = int(input("Quantidade: "))
     valor = float(input("valor: "))
@@ -32,8 +32,8 @@ def cadastro_caneca(canecas):
 
     canecas[id] = [modelo,cor,quantidade,valor]
 
-    print("\n\nCaneca cadastrada com sucesso!\n")
-    input("Tecle <ENTER> para continuar...")
+    print("\n\nCaneca cadastrada com sucesso!")
+    input("\nTecle <ENTER> para continuar...")
 
 def listar_caneca(canecas):
     os.system('clear')
@@ -46,16 +46,18 @@ def listar_caneca(canecas):
 
     if id in canecas.keys():
         print("\nID: ", id)
-        print("Modelos: ", canecas[id][0])
-        print("Cores: ", canecas[id][1])
+        print("Modelo: ", canecas[id][0])
+        print("Cor: ", canecas[id][1])
         print("Quantidade em Estoque: ", canecas[id][2])
-        print("Valores: ",canecas[id][3])
+        print("Valor: R$ %.2f"%canecas[id][3])
     else:
-        print("Caneca não existe! \nVeja outras:")
+        print("Caneca não existe! \nVeja outras:\n")
+        
+        #Mostrando outras canecas disponiveis
         for id, item in canecas.items():
-            print("ID: ",id, item)
+            print("ID:",id, item[0])
     
-    input("Tecle <ENTER> para continuar...")
+    input("\nTecle <ENTER> para continuar...")
 
 def atualizar_caneca(canecas):
     os.system('clear')
@@ -75,11 +77,11 @@ def atualizar_caneca(canecas):
 
         canecas[id] = [modelo,cor,quantidade,valor]
 
-        print("\n\nCaneca atualizada com sucesso!\n")
+        print("\n\nCaneca atualizada com sucesso!")
     else:
         print("\n\nEssa caneca não existe!")
 
-    input("Tecle <ENTER> para continuar...")
+    input("\nTecle <ENTER> para continuar...")
 
 def excluir_caneca(canecas):
     os.system('clear')
@@ -95,7 +97,7 @@ def excluir_caneca(canecas):
         print("\nModelo: ",canecas[id][0])
         print("Cor: ",canecas[id][1])
         print("Quantidade: ",canecas[id][2])
-        print("Valor: ", canecas[id][3])
+        print("Valor: R$ %.2f"%canecas[id][3])
         print()
         resposta = input("Deseja exluir a caneca do estoque? (S/N)")
         if resposta == 'S' or resposta == 's':
@@ -106,4 +108,4 @@ def excluir_caneca(canecas):
     else:
         print("\n\nEssa caneca não existe!")
     
-    input("Tecle <ENTER> para continuar...")
+    input("\nTecle <ENTER> para continuar...")
