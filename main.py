@@ -7,8 +7,8 @@ import modulos.menu
 
 # CPFcliente -> nome, rua, telefone
 clientes = {
-    '000.000.000-00': ["Maggie Simpson", "Rua maria das dores", "55555-5555"],
-    '111.111.111-11': ["Manoel Gomes", "Rua azul", "55555-5556"]
+    '000.000.000-00': ["Maggie Simpson", "Rua maria das dores", "55555555555"],
+    '111.111.111-11': ["Manoel Gomes", "Rua azul", "99999999999"]
 }
 
 # IDcaneca -> modelo, cor, quantidadeEstoque, valor
@@ -72,7 +72,7 @@ while opcao_principal != '0':
                 match opcao_pedido:
 
                     case '1':
-                        modulos.pedido.cadastro_pedido(pedidos,canecas)
+                        modulos.pedido.cadastro_pedido(pedidos,canecas,clientes)
                     case '2':
                         modulos.pedido.listar_pedido(pedidos)
                     case '3':

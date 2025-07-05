@@ -52,7 +52,6 @@ def listar_caneca(canecas):
         print("Valor: R$ %.2f"%canecas[id][3])
     else:
         print("Caneca não existe! \nVeja outras:\n")
-        
         #Mostrando outras canecas disponiveis
         for id, item in canecas.items():
             print("ID:",id, item[0])

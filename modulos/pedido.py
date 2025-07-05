@@ -17,7 +17,7 @@ def menu_pedido():
     opcao_pedido = str(input("Escolha sua opção: "))
     return opcao_pedido
 
-def cadastro_pedido(pedidos,canecas):
+def cadastro_pedido(pedidos,canecas,clientes):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
@@ -26,28 +26,37 @@ def cadastro_pedido(pedidos,canecas):
 
 
     cliente_pedido = str(input("Informe o CPF do cliente: "))
-    pedidos_condicao = ''
-    while pedidos_condicao != 'n':
-        id_caneca = int(input("\nDigite o ID do modelo de caneca desejada: "))
+    if cliente_pedido in clientes:
+        pedidos_condicao = ''
+        quantidade = 0 #acumula caso ele queira mais
+        while pedidos_condicao != 'n':
+            
+            #Mostrando as canecas para o cliente escolher
+            print("\nCanecas disponiveis")
+            for id, item in canecas.items():
+                print("ID:",id, " Modelo:",item[0]," Cor:",item[1]," Quantidade:",item[2]," Valor: %.2f"%item[3])
+            
+            id_caneca = int(input("\nDigite o ID do modelo de caneca desejada: "))
 
-        #Não deixar ele comprar uma quantidade maior que a existente em estoque
-        quantidade = int(input("Digite a quantidade de canecas desejadas: "))
-        if quantidade > canecas[id_caneca][2]:
-            print("Não temos essa quantidade em estoque!\n")
-            print("Modelo",canecas[id_caneca][0],"possui",canecas[id_caneca][2],"canecas\n")
+            #Não deixar ele comprar uma quantidade maior que a existente em estoque
+            quantidade += int(input("Digite a quantidade de canecas desejadas: "))
+            if quantidade > canecas[id_caneca][2]:
+                print("Não temos essa quantidade em estoque!\n")
+                print("Modelo",canecas[id_caneca][0],"possui",canecas[id_caneca][2],"canecas\n")
 
-            resposta = input("Deseja outra quantidade? (s/n)")
-            if resposta == 'S' or resposta == 's':
-                quantidade = int(input("\nDigite uma nova quantidade desejada: "))
-                print("\n\nPedido cadastrado com sucesso!")
-            else:
-                print("\n\nPedido não realizado!")
+                resposta = input("Deseja outra quantidade? (s/n)")
+                if resposta == 'S' or resposta == 's':
+                    quantidade = int(input("\nDigite uma nova quantidade desejada: "))
+                    print("\n\nPedido cadastrado com sucesso!")
+                else:
+                    print("\n\nPedido não realizado!")
 
-        valor_caneca = canecas[id_caneca][3]
-        
-        valor_total = quantidade * valor_caneca
+            valor_caneca = canecas[id_caneca][3]
+            
+            valor_total = quantidade * valor_caneca
 
-        pedidos_condicao = str(input("\nDeseja comprar outro modelo de caneca? (s/n)"))
+            pedidos_condicao = str(input("\nDeseja comprar outro modelo de caneca? (s/n)"))
+
         id_pedido = max(pedidos.keys()) + 1
 
         #Eliminando canecas que foram compradas
@@ -57,8 +66,12 @@ def cadastro_pedido(pedidos,canecas):
         data = datetime.datetime.now().strftime("%d/%m/%Y")
 
         pedidos[id_pedido] = [cliente_pedido, id_caneca, quantidade, valor_total,data]
-
+        
         print("\n\nPedido cadastrado com sucesso!")
+        input("Tecle <ENTER> para continuar...")
+
+    else:
+        print("Esse cliente não está cadastrado")
         input("Tecle <ENTER> para continuar...")
 
 def listar_pedido(pedidos):
@@ -74,7 +87,8 @@ def listar_pedido(pedidos):
         print("\nCPF Cliente: ", pedidos[id][0])
         print("ID caneca: ", pedidos[id][1])
         print("Quantidade de canecas: ", pedidos[id][2])
-        print("Valor total: ", pedidos[id][3])
+        print("Valor: R$ %.2f"%pedidos[id][3])
+        print("Data: ", pedidos[id][4])
     else:
         print("\n\nPedido não existente!")
     input("Tecle <ENTER> para continuar...")
