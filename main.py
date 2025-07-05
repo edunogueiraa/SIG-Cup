@@ -18,10 +18,10 @@ canecas = {
     1: ["Caneca do caneta azul", "azul", 20, 45.00]
 }
 
-# IDpedido -> CPFcliente, IDcaneca, quantidade, valorTotal
+# IDpedido -> CPFcliente, IDcaneca, quantidade, valorTotal,data
 pedidos = {
-    0: ["000.000.000-00", 0, 2, 100.00],
-    1: ["111.111.111-11", 1, 1, 45.00]
+    0: ["000.000.000-00", 0, 2, 100.00,'05/07/2025'],
+    1: ["111.111.111-11", 1, 1, 45.00,'20/06/2025']
 }
 
 opcao_principal = ''
@@ -94,11 +94,11 @@ while opcao_principal != '0':
                 match opcao_relatorios:
 
                     case '1':
-                        modulos.relatorio.pedidos_periodo()
+                        modulos.relatorio.pedidos_periodo(pedidos)
                     case '2':
-                        modulos.relatorio.pedidos_cliente()
-                    case '3':
-                        modulos.relatorio.pedidos_caneca()
+                        modulos.relatorio.pedidos_cliente(pedidos)
+                    case '3':   
+                        modulos.relatorio.pedidos_caneca(pedidos)
 
         case '0':
             print("Encerrando o programa")

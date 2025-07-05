@@ -15,23 +15,44 @@ def menu_relatorio():
     opcao_relatorios = str(input("Escolha sua opção: "))
     return opcao_relatorios
 
-def pedidos_periodo():
+def pedidos_periodo(pedidos):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
     print("|             Pedidos por Periodo          |")
-    print("|__________________________________________|\n")
+    print("|__________________________________________|\n\n")
 
-def pedidos_cliente():
+    relatorio_periodo = {}
+    for i in pedidos:
+        data = pedidos[i][4]
+        print(data)
+
+        dia, mes, ano = data.split('/')
+        print(dia)
+        print(mes)
+        print(ano)
+
+    relatorio_periodo[ano][mes].append(pedidos)
+
+    input("\nTecle <ENTER> para continuar...")
+
+
+def pedidos_cliente(pedidos):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
     print("|             Pedidos por Cliente          |")
     print("|__________________________________________|\n")
 
-def pedidos_caneca():
+    
+
+    input("\nTecle <ENTER> para continuar...")
+
+def pedidos_caneca(pedidos):
     os.system('clear')
     print("____________________________________________")
     print("|                                          |")
     print("|             Pedidos por Caneca           |")
     print("|__________________________________________|\n")
+
+    input("\nTecle <ENTER> para continuar...")

@@ -1,4 +1,5 @@
 import os
+import datetime
 
 def menu_pedido():
     os.system('clear')
@@ -30,8 +31,17 @@ def cadastro_pedido(pedidos,canecas):
         id_caneca = int(input("\nDigite o ID do modelo de caneca desejada: "))
 
         #Não deixar ele comprar uma quantidade maior que a existente em estoque
+        quantidade = int(input("Digite a quantidade de canecas desejadas: "))
+        if quantidade > canecas[id_caneca][2]:
+            print("Não temos essa quantidade em estoque!\n")
+            print("Modelo",canecas[id_caneca][0],"possui",canecas[id_caneca][2],"canecas\n")
 
-        quantidade = int(input("Digite a quantidade de canecas desse modelo: "))
+            resposta = input("Deseja outra quantidade? (s/n)")
+            if resposta == 'S' or resposta == 's':
+                quantidade = int(input("\nDigite uma nova quantidade desejada: "))
+                print("\n\nPedido cadastrado com sucesso!")
+            else:
+                print("\n\nPedido não realizado!")
 
         valor_caneca = canecas[id_caneca][3]
         
@@ -43,8 +53,13 @@ def cadastro_pedido(pedidos,canecas):
         #Eliminando canecas que foram compradas
         canecas[id_caneca][2] -= quantidade
 
-        pedidos[id_pedido] = [cliente_pedido, id_caneca, quantidade, valor_total]
+        #Pegando data dia/mes/ano
+        data = datetime.datetime.now().strftime("%d/%m/%Y")
 
+        pedidos[id_pedido] = [cliente_pedido, id_caneca, quantidade, valor_total,data]
+
+        print("\n\nPedido cadastrado com sucesso!")
+        input("Tecle <ENTER> para continuar...")
 
 def listar_pedido(pedidos):
     os.system('clear')

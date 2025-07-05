@@ -1,4 +1,5 @@
 import os
+import modulos.valida
 
 def menu_cliente ():
     os.system('clear')
@@ -25,11 +26,24 @@ def cadastro_cliente(clientes):
     print("|           Cadastro de Cliente            |")
     print("|__________________________________________|\n")
     
+
     nome = str(input("Nome: "))
+    while not(modulos.valida.validar_nome(nome)):
+        print("Esse nome é invalido! Digite novamente: ")
+        nome = str(input("Nome: "))
+
     cpf = str(input("CPF: "))
+    while not(modulos.valida.validar_cpf(cpf)):
+        print("Esse CPF é invalido! Digite novamente: ")
+        cpf = str(input("CPF: "))
+
     endereco = str(input("Endereço: "))
+
     telefone = str(input("Telefone: "))
-    print()
+    while not(modulos.valida.validar_telefone(telefone)):
+        print("Esse telefone é invalido! Digite novamente: EX(DDD 99999-9999)")
+        telefone = str(input("Telefone: "))
+
     clientes[cpf] = [nome,endereco,telefone]
 
     print("\n\nCliente cadastrado com sucesso!\n")
