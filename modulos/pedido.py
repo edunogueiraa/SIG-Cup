@@ -68,9 +68,9 @@ def cadastro_pedido(pedidos,canecas,clientes):
                     id_pedido += 1 
                     print("\n\nPedido cadastrado com sucesso!")
 
-                print("\nValor da compra: %.2f"%valor_total)
-                pedidos_condicao = input("\nDeseja comprar outro modelo de caneca? (s/n): ")
-                os.system('clear')
+                    print("\nValor da compra: %.2f"%valor_total)
+                    pedidos_condicao = input("\nDeseja comprar outro modelo de caneca? (s/n): ")
+                    os.system('clear')
 
             else:
                 print("A caneca não existe no estoque!")
