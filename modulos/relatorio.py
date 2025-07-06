@@ -67,7 +67,6 @@ def pedidos_caneca(pedidos):
     print("|_____________|___________________________________________________________________________________|")
     print("                                                                                                   ")
 
-    # Formato do dicionário:  IDpedido -> CPFcliente, IDcaneca, quantidade, valorTotal,data
     for id, item in pedidos.items():
         print(f"|    {item[1]:<9}| ID: {id}   CPF: {item[0]}   Quantidade: {item[2]}   Data: {item[4]}   Valor: R$ {item[3]:.2f}  ")
 
