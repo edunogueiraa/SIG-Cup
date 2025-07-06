@@ -16,7 +16,6 @@ def menu_relatorio():
     opcao_relatorios = str(input("Escolha sua opção: "))
     return opcao_relatorios
 
-# Formato do dicionário:  IDpedido -> CPFcliente, IDcaneca, quantidade, valorTotal,data
 
 def pedidos_periodo(pedidos):
     os.system('clear')
@@ -30,7 +29,7 @@ def pedidos_periodo(pedidos):
     print("                                                                                                        ")
 
     for id, item in pedidos.items():
-        print(f"|  {item[4]:<10} |        ID: {id}   CPF: {item[0]}   Caneca: {item[1]}   Qtd: {item[2]}   Valor: R$ {item[3]:.2f}  ")
+        print(f"|  {item[4]:<10} |   ID: {id}   CPF: {item[0]}   Caneca: {item[1]}   Quantidade: {item[2]}   Valor: R$ {item[3]:.2f}  ")
 
     print(" _______________________________________________________________________________________________________")
     print()
@@ -40,16 +39,19 @@ def pedidos_periodo(pedidos):
 
 def pedidos_cliente(pedidos):
     os.system('clear')
-    print("__________________________________________________________________________________________________")
+    print("___________________________________________________________________________________________________")
     print("|                                                                                                 |")                                           
     print("|                               Relatório Geral Pedidos Por Cliente                               |")
     print("|_________________________________________________________________________________________________|")
     print("|                |                                                                                |")
     print("|     Clientes   |                                   Pedidos                                      |")
     print("|________________|________________________________________________________________________________|")
-    print("|                |                                                                                 ")
+    print("                                                                                                   ")
 
-    print("|________________|_________________________________________________________________________________|")
+    for id, item in pedidos.items():
+        print(f"| {item[0]:<10} |   ID: {id}   Caneca: {item[1]}   Quantidade: {item[2]}   Data: {item[4]}   Valor: R$ {item[3]:.2f}  ")
+
+    print("____________________________________________________________________________________________________")
     print()
 
     input("\nTecle <ENTER> para continuar...")
@@ -63,9 +65,13 @@ def pedidos_caneca(pedidos):
     print("|             |                                                                                   |")
     print("|  IDs Caneca |                                    Pedidos                                        |")
     print("|_____________|___________________________________________________________________________________|")
-    print("|             |                                                                                    ")
+    print("                                                                                                   ")
 
-    print("|_____________|___________________________________________________________________________________|")
+    # Formato do dicionário:  IDpedido -> CPFcliente, IDcaneca, quantidade, valorTotal,data
+    for id, item in pedidos.items():
+        print(f"|    {item[1]:<9}| ID: {id}   CPF: {item[0]}   Quantidade: {item[2]}   Data: {item[4]}   Valor: R$ {item[3]:.2f}  ")
+
+    print("___________________________________________________________________________________________________")
     print()
 
     input("\nTecle <ENTER> para continuar...")
