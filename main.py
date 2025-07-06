@@ -1,3 +1,4 @@
+import pickle
 import modulos.caneca
 import modulos.cliente
 import modulos.pedido
@@ -6,22 +7,40 @@ import modulos.informes
 import modulos.menu
 
 # CPFcliente -> nome, rua, telefone
-clientes = {
-    '000.000.000-00': ["Maggie Simpson", "Rua maria das dores", "55555555555"],
-    '111.111.111-11': ["Manoel Gomes", "Rua azul", "99999999999"]
-}
+clientes = {}
+
+try:
+  arq_clientes = open("clientes.dat", "rb")
+  clientes = pickle.load(arq_clientes)
+  
+except:
+  arq_clientes = open("clientes.dat", "wb")
+arq_clientes.close()
+
 
 # IDcaneca -> modelo, cor, quantidadeEstoque, valor
-canecas = {
-    0: ["Caneca do batman", "preta", 10, 50.00],
-    1: ["Caneca do caneta azul", "azul", 20, 45.00]
-}
+canecas = {}
+
+try:
+  arq_canecas = open("canecas.dat", "rb")
+  canecas = pickle.load(arq_canecas)
+
+except:
+  arq_canecas = open("canecas.dat", "wb")
+arq_canecas.close()
+
 
 # IDpedido -> CPFcliente, IDcaneca, quantidade, valorTotal,data
-pedidos = {
-    0: ["000.000.000-00", 0, 2, 100.00,'05/07/2025'],
-    1: ["111.111.111-11", 1, 1, 45.00,'20/06/2025']
-}
+pedidos = {}
+
+try:
+  arq_pedidos = open("pedidos.dat", "rb")
+  pedidos = pickle.load(arq_pedidos)
+
+except:
+  arq_pedidos = open("pedidos.dat", "wb")
+arq_pedidos.close()
+
 
 opcao_principal = ''
 while opcao_principal != '0':
@@ -100,9 +119,24 @@ while opcao_principal != '0':
                         modulos.relatorio.pedidos_caneca(pedidos)
 
         case '0':
-            print("Encerrando o programa")
+            print("Encerrando o programa e gravando dados...")
             input("Tecle <ENTER> para continuar...")
 
         case _: #else
             print("Opção inválida!\n")
-            input("Tecle <ENTER> para continuar...")    
+            input("Tecle <ENTER> para continuar...")
+
+
+# Gravando os dados nos arquivos
+
+arq_clientes = open("clientes.dat", "wb")
+pickle.dump(clientes, arq_clientes)
+arq_clientes.close()
+
+arq_canecas = open("canecas.dat", "wb")
+pickle.dump(canecas, arq_canecas)
+arq_canecas.close()
+
+arq_pedidos = open("pedidos.dat", "wb")
+pickle.dump(pedidos, arq_pedidos)
+arq_pedidos.close()

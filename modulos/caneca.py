@@ -42,7 +42,12 @@ def listar_caneca(canecas):
     print("|             Listar Caneca                |")
     print("|__________________________________________|\n")
 
-    id = int(input("Qual o ID da caneca? : "))
+    #Mostrando outras canecas disponiveis
+    print("Canecas disponiveis")
+    for id, item in canecas.items():
+        print("ID:",id, item[0])
+
+    id = int(input("\nQual o ID da caneca? : "))
 
     if id in canecas.keys():
         print("\nID: ", id)
@@ -52,9 +57,6 @@ def listar_caneca(canecas):
         print("Valor: R$ %.2f"%canecas[id][3])
     else:
         print("Caneca não existe! \nVeja outras:\n")
-        #Mostrando outras canecas disponiveis
-        for id, item in canecas.items():
-            print("ID:",id, item[0])
     
     input("\nTecle <ENTER> para continuar...")
 
@@ -89,7 +91,11 @@ def excluir_caneca(canecas):
     print("|             Deletar Caneca               |")
     print("|__________________________________________|\n")
 
-    id = int(input("Qual o ID da caneca? : "))
+    print("Canecas disponiveis")
+    for id, item in canecas.items():
+        print("ID:",id, item[0])
+
+    id = int(input("\nQual o ID da caneca? : "))
 
     if id in canecas:
 
