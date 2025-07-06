@@ -71,7 +71,7 @@ def atualizar_caneca(canecas):
     
     if id in canecas:
 
-        modelo = str(input("\nModelo:"))
+        modelo = str(input("\nModelo: "))
         cor  = str(input("Cor: "))
         quantidade = int(input("Quantidade: "))
         valor = float(input("valor: "))
