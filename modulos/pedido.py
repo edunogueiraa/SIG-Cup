@@ -45,7 +45,8 @@ def cadastro_pedido(pedidos,canecas,clientes):
             id_caneca = int(input("\nDigite o ID do modelo de caneca desejada: "))
 
             if id_caneca in canecas:
-
+                
+                #Tratar a quantidade
                 while True:
                     quantidade = int(input("Digite a quantidade de canecas desejadas: "))
                     if quantidade > canecas[id_caneca][2]:
