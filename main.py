@@ -9,11 +9,11 @@ import modulos.menu
 # CPFcliente -> nome, rua, telefone
 clientes = {}
 
-try:
+try:#Abre o arquivo e ler
   arq_clientes = open("clientes.dat", "rb")
   clientes = pickle.load(arq_clientes)
-  
-except:
+
+except: #cria um novo aquivo, caso não tenha e fecha
   arq_clientes = open("clientes.dat", "wb")
 arq_clientes.close()
 
@@ -127,7 +127,7 @@ while opcao_principal != '0':
             input("Tecle <ENTER> para continuar...")
 
 
-# Gravando os dados nos arquivos
+# Abre, grava e fecha
 
 arq_clientes = open("clientes.dat", "wb")
 pickle.dump(clientes, arq_clientes)

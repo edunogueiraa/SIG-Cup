@@ -1,4 +1,5 @@
 import os
+import datetime
 
 def menu_relatorio():
     os.system('clear')
@@ -15,44 +16,56 @@ def menu_relatorio():
     opcao_relatorios = str(input("Escolha sua opção: "))
     return opcao_relatorios
 
+# Formato do dicionário:  IDpedido -> CPFcliente, IDcaneca, quantidade, valorTotal,data
+
 def pedidos_periodo(pedidos):
     os.system('clear')
-    print("____________________________________________")
-    print("|                                          |")
-    print("|             Pedidos por Periodo          |")
-    print("|__________________________________________|\n\n")
+    print("________________________________________________________________________________________________________")
+    print("|                                                                                                      |")                                           
+    print("|                                    Relatório Geral Pedidos Por Periodo                               |")
+    print("|______________________________________________________________________________________________________|")
+    print("|             |                                                                                        |")
+    print("|    Datas    |                                      Pedidos                                           |")
+    print("|_____________|________________________________________________________________________________________|")
+    print("                                                                                                        ")
 
-    relatorio_periodo = {}
-    for i in pedidos:
-        data = pedidos[i][4]
-        print(data)
+    for id, item in pedidos.items():
+        print(f"|  {item[4]:<10} |        ID: {id}   CPF: {item[0]}   Caneca: {item[1]}   Qtd: {item[2]}   Valor: R$ {item[3]:.2f}  ")
 
-        dia, mes, ano = data.split('/')
-        print(dia)
-        print(mes)
-        print(ano)
-
-    relatorio_periodo[ano][mes].append(pedidos)
+    print(" _______________________________________________________________________________________________________")
+    print()
 
     input("\nTecle <ENTER> para continuar...")
 
 
 def pedidos_cliente(pedidos):
     os.system('clear')
-    print("____________________________________________")
-    print("|                                          |")
-    print("|             Pedidos por Cliente          |")
-    print("|__________________________________________|\n")
+    print("__________________________________________________________________________________________________")
+    print("|                                                                                                 |")                                           
+    print("|                               Relatório Geral Pedidos Por Cliente                               |")
+    print("|_________________________________________________________________________________________________|")
+    print("|                |                                                                                |")
+    print("|     Clientes   |                                   Pedidos                                      |")
+    print("|________________|________________________________________________________________________________|")
+    print("|                |                                                                                 ")
 
-    
+    print("|________________|_________________________________________________________________________________|")
+    print()
 
     input("\nTecle <ENTER> para continuar...")
 
 def pedidos_caneca(pedidos):
     os.system('clear')
-    print("____________________________________________")
-    print("|                                          |")
-    print("|             Pedidos por Caneca           |")
-    print("|__________________________________________|\n")
+    print("__________________________________________________________________________________________________")
+    print("|                                                                                                 |")                                           
+    print("|                               Relatório Geral Pedidos Por Canecas                               |")
+    print("|_________________________________________________________________________________________________|")
+    print("|             |                                                                                   |")
+    print("|  IDs Caneca |                                    Pedidos                                        |")
+    print("|_____________|___________________________________________________________________________________|")
+    print("|             |                                                                                    ")
+
+    print("|_____________|___________________________________________________________________________________|")
+    print()
 
     input("\nTecle <ENTER> para continuar...")
