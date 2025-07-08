@@ -37,22 +37,35 @@ def pedidos_periodo(pedidos):
     input("\nTecle <ENTER> para continuar...")
 
 
-def pedidos_cliente(pedidos):
+def pedidos_cliente(pedidos,clientes):
     os.system('clear')
     print("___________________________________________________________________________________________________")
     print("|                                                                                                 |")                                           
     print("|                               Relatório Geral Pedidos Por Cliente                               |")
     print("|_________________________________________________________________________________________________|")
-    print("|                |                                                                                |")
-    print("|     Clientes   |                                   Pedidos                                      |")
-    print("|________________|________________________________________________________________________________|")
-    print("                                                                                                   ")
+    print("|                |                           |                       |                            |")
+    print("|       CPF      |       Nome Completo       |     Quantidade        |        Valor Gasto         |")
+    print("|________________|___________________________|_______________________|____________________________|")
+    print("|                |                           |                       |                            |")
 
-    for id, item in pedidos.items():
-        print(f"| {item[0]:<10} |   ID: {id}   Caneca: {item[1]}   Quantidade: {item[2]}   Data: {item[4]}   Valor: R$ {item[3]:.2f}  ")
+    cpfs = list(clientes.keys())
+    for i in range(len(cpfs)):
+        cpf = cpfs[i]
 
-    print("____________________________________________________________________________________________________")
-    print()
+        quantidade = 0
+        valor = 0
+        for x in pedidos:
+            if pedidos[x][0] == cpf: 
+                quantidade += pedidos[x][2]
+                valor += pedidos[x][3]  
+
+        nome = clientes[cpf][0][0:22]
+        valor_formatado = f"{valor:.2f}"
+
+        print(f"| {cpf:14s} | {nome:25s} | {quantidade:21d} | R$ {valor_formatado:>23s} |")
+
+    print("|_________________________________________________________________________________________________|")
+    
 
     input("\nTecle <ENTER> para continuar...")
 

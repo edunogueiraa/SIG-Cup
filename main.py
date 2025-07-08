@@ -114,7 +114,7 @@ while opcao_principal != '0':
                     case '1':
                         modulos.relatorio.pedidos_periodo(pedidos)
                     case '2':
-                        modulos.relatorio.pedidos_cliente(pedidos)
+                        modulos.relatorio.pedidos_cliente(pedidos,clientes)
                     case '3':   
                         modulos.relatorio.pedidos_caneca(pedidos)
 
