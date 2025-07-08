@@ -89,6 +89,7 @@ def pedidos_caneca(pedidos,canecas):
 
         valor_caneca = canecas[id][3]  
 
+        #Juntei a quantidade de canecas do pedido
         for j in pedidos:
             if pedidos[j][1] == id: 
                 quantidade += pedidos[j][2]
