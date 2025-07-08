@@ -116,7 +116,7 @@ while opcao_principal != '0':
                     case '2':
                         modulos.relatorio.pedidos_cliente(pedidos,clientes)
                     case '3':   
-                        modulos.relatorio.pedidos_caneca(pedidos)
+                        modulos.relatorio.pedidos_caneca(pedidos,canecas)
 
         case '0':
             print("Encerrando o programa e gravando dados...")
