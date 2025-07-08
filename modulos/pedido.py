@@ -47,17 +47,16 @@ def cadastro_pedido(pedidos,canecas,clientes):
             if id_caneca in canecas:
                 
                 #Tratar a quantidade
-                while True:
+                resposta = ''
+                while resposta != 'n':
                     quantidade = int(input("Digite a quantidade de canecas desejadas: "))
                     if quantidade > canecas[id_caneca][2]:
                         print("Não temos essa quantidade em estoque!")
                         print("\nO modelo escolhido", canecas[id_caneca][0], "só possui", canecas[id_caneca][2], "canecas\n")
                         resposta = input("Deseja outra quantidade para esse modelo? (s/n): ")
-                        if resposta.lower() == 'n':
-                            quantidade = 0
-                            break
+                        quantidade = 0
                     else:
-                        break
+                        resposta = 'n'
 
                 if quantidade > 0:
                     valor_caneca = canecas[id_caneca][3]
