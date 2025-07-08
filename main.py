@@ -91,7 +91,7 @@ while opcao_principal != '0':
                 match opcao_pedido:
 
                     case '1':
-                        modulos.pedido.cadastro_pedido(pedidos,canecas,clientes)
+                        modulos.pedido.cadastro_pedido(pedidos, canecas, clientes)
                     case '2':
                         modulos.pedido.listar_pedido(pedidos)
                     case '3':
