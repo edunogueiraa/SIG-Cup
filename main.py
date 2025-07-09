@@ -112,7 +112,7 @@ while opcao_principal != '0':
                 match opcao_relatorios:
 
                     case '1':
-                        modulos.relatorio.pedidos_periodo(pedidos)
+                        modulos.relatorio.pedidos_periodo(pedidos,clientes)
                     case '2':
                         modulos.relatorio.pedidos_cliente(pedidos,clientes)
                     case '3':   

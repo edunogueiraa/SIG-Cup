@@ -17,24 +17,51 @@ def menu_relatorio():
     return opcao_relatorios
 
 
-def pedidos_periodo(pedidos):
+def pedidos_periodo(pedidos,clientes):
     os.system('clear')
     print("________________________________________________________________________________________________________")
     print("|                                                                                                      |")                                           
     print("|                                    Relatório Geral Pedidos Por Periodo                               |")
     print("|______________________________________________________________________________________________________|")
-    print("|             |                                                                                        |")
-    print("|    Datas    |                                      Pedidos                                           |")
-    print("|_____________|________________________________________________________________________________________|")
-    print("                                                                                                        ")
+    print("|                |                           |                       |                                 |")
+    print("|      Data      |    Quantidade Clientes    | Quantidade de Pedidos |      Valor Recebido na Data     |")
+    print("|________________|___________________________|_______________________|_________________________________|")
+    print("|                |                           |                       |                                 |")
 
-    for id, item in pedidos.items():
-        print(f"|  {item[4]:<10} |   ID: {id}   CPF: {item[0]}   Caneca: {item[1]}   Quantidade: {item[2]}   Valor: R$ {item[3]:.2f}  ")
+    #Pegando uma data de cada
+    datas = []
+    for i in pedidos:
+        if pedidos[i][4] not in datas:
+            datas.append(pedidos[i][4])
 
-    print(" _______________________________________________________________________________________________________")
-    print()
+    #Pecorrendo cada data
+    for data in datas:
+
+        quantidade_pedidos = 0
+        clientes = []
+        valor = 0
+
+        #Pecorendo os pedidos e analizando
+        for i in pedidos:
+            if pedidos[i][4] == data:
+                cpf = pedidos[i][0]
+                if cpf not in clientes:
+                    clientes.append(cpf)
+
+                quantidade_pedidos += 1 #Contando pedidos da data
+                valor += pedidos[i][3] #Somando valores dos pedidos da data
+
+                quantidade_clientes = len(clientes)
+
+        valor_formatado = f"{valor:.2f}"
+
+        print(f"|   {data:12s} | {quantidade_clientes:25d} | {quantidade_pedidos:21d} | R$ {valor_formatado:>28s} |")
+
+    print("|______________________________________________________________________________________________________|")
+    
 
     input("\nTecle <ENTER> para continuar...")
+
 
 
 def pedidos_cliente(pedidos,clientes):
@@ -92,7 +119,7 @@ def pedidos_caneca(pedidos,canecas):
         #Juntei a quantidade de canecas do pedido
         for j in pedidos:
             if pedidos[j][1] == id: 
-                quantidade += pedidos[j][2]
+                quantidade += pedidos[j][2] #Quantidade de vendas de cada caneca
 
         valor_vendas = quantidade * valor_caneca
 
